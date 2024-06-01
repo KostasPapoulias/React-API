@@ -30,12 +30,12 @@ function App() {
   
   return (
     <div className='container'>
-      <h1>Country Information</h1>
+      <h1>City Information</h1>
       <SearchBar countryInput={(value) => { fetchData(value); }} />  
       <div className='CardContainer'>   
-        <CityCard city={cities[0]} />
-        <CityCard city={cities[1]} />
-        <CityCard city={cities[2]} />
+      {cities && <CityCard city={cities[2]} />}
+      {cities && <CityCard city={cities[3]} />}
+      {cities && <CityCard city={cities[4]} />}
       </div> 
     </div>
   )
