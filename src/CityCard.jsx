@@ -1,9 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import './CityCard.css';
 import Details from './Details.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
  * this function returns a card with the city name and a button to see the details
@@ -14,8 +13,12 @@ export default function CityCard({ city }) {
 
   const handleClick = (cityDet) => {
     setCityDet(cityDet);
-    console.log(cityDet, showDetails);
   };
+  
+  useEffect(() => {
+    if(city)
+      handleClick(city.name);
+  }, [city]);
 
   return (
     <>
@@ -26,7 +29,7 @@ export default function CityCard({ city }) {
               <Card.Body>
                 <Card.Title>{city.name}</Card.Title>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header onClick={() => handleClick(city.name)}>
+                  <Accordion.Header onClick={() => handleClick(city)}>
                     See details
                   </Accordion.Header>
                   <Accordion.Body>
