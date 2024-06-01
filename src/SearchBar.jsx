@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
+import './SearchBar.css';
 /**
  * SearchBar component
  * returns a countryInput by pressing enter or clicking the search button
@@ -19,16 +20,16 @@ export default function SearchBar({countryInput}) {
     };
 
     return (
-        <div className='searchBar'>
+        <div className='SearchBar'>
             <Form.Control
                 type="text"
                 id="nameInput"
-                placeholder='Enter a country name by the country code (e.g. US for United States)'
+                placeholder='Enter a country by the code (e.g. US for United States)'
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
                 onKeyPress={handleKeyPress}
             />
-            <Button variant="light" onClick={handleButtonClick}>Search</Button>{' '}
+            <Button id='SearchButton' variant="light" onClick={handleButtonClick}>Search</Button>{' '}
 
         </div>
     );
