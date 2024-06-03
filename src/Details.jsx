@@ -39,7 +39,6 @@ export default function Details({cityDetails}) {
                         <Card.Text>
                             Population: {cityDetails.population}
                         </Card.Text>
-                        {console.log(weather)}
                             {weather && weather.weather && weather.weather.length > 0 ? (
                                 <>
                                 <Card.Img variant="top" src={`../images/${weather.weather[0].main}.png`} />                   

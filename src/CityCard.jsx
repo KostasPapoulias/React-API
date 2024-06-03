@@ -17,7 +17,7 @@ export default function CityCard({ city }) {
   
   useEffect(() => {
     if(city)
-      handleClick(city.name);
+      handleClick(city);
   }, [city]);
 
   return (
